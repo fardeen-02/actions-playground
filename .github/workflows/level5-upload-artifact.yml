@@ -1,0 +1,21 @@
+# uploading the artifact
+#goal: save the file during the workflow
+
+name: level-5-artifact
+
+on: push
+
+jobs:
+  save_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create the output file
+        run: echo "this is the artifact" >output.txt
+
+      - name:  Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-output
+          path: output.txt
+          
+            

@@ -11,7 +11,7 @@ jobs:
       - name: Create a fake report
         run: |
           mkdir coverage
-          echo "Coverage: 85%" >coverage/report.txt
+          echo " Coverage: 85% " > coverage/report.txt
       - name: Upload coverage
         uses: actions/upload-artifact@V4
         with:

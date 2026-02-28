@@ -1,0 +1,19 @@
+# concurrency control
+#If you push many times quickly, GitHub will stop the old run and only run the newest one.
+name: level4-concurrency
+
+on: push
+
+concurrency: 
+ group: same-branch
+ cancel-in-progress: true
+
+jobs:
+  fast_job:
+   runs-on: ubuntu-latest
+   steps:
+     - run: |
+        echo "running ...."
+        sleep 30
+        echo "done"
+  

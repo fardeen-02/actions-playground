@@ -1,0 +1,14 @@
+name: level-2 checkout
+
+on: push
+
+jobs:
+  check-out:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chekout code
+        run: actions/checkout@v4
+
+      - name: list files
+        run: ls -al
+        

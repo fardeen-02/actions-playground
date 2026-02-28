@@ -1,0 +1,23 @@
+# add a label automatically after PR approval
+name: label-when-approved
+on: 
+ pull_request_review: 
+ 
+
+permissions: 
+  pull-requests: write
+
+jobs:
+  label-job:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add label
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: approved
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          
+          
+        

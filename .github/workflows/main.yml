@@ -1,0 +1,7 @@
+name: main
+on: push
+jobs:
+  say-hello:
+    uses: ./.github/workflows/reusable-greet.yml
+    with:
+      your_name: "Fardeen"

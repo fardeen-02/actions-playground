@@ -1,0 +1,16 @@
+# .github/workflows/reusable-greet.yml
+
+name: reusable-greet
+on: 
+  workflow_call:
+    inputs:
+      your_name:
+        type: string
+        required: true
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say-hello
+        run: echo "hello ${{ inputs.your_name }}"

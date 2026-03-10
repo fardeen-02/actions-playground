@@ -1,0 +1,23 @@
+# added matix for multi version testing
+name: level-3 matrix
+
+on: push
+
+jobs:
+  level_3_matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [18,20]
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v4
+
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: showing working version
+        run: node -v
+          
